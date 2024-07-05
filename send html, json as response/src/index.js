@@ -11,9 +11,9 @@ let file = fs.readFileSync('../public/a.html', 'utf-8')
 // in 3rd method we use express.ststic function to send file to client
 
 //1st
-app.get('/', (req, res) =>{
-    res.send(file)
-})
+// app.get('/', (req, res) =>{
+//     res.send(file)
+// })
 
 //2nd
 app.get('/api', (req, res) =>{
@@ -30,7 +30,11 @@ app.use(express.static(staticPath))
 
 app.listen(8000, () =>{
     console.log('running');
-    
+    // console.log(staticPath);
+    // console.log(__dirname);
+
+
 })
 
 // above example is for routing in express and sending html page to client and json data with three methods
+
