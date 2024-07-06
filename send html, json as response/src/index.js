@@ -24,8 +24,6 @@
 // })
 
 //3rd
-// let staticPath = path.join(__dirname, '../public')
-// app.use(express.static(staticPath))
 
 
 // app.listen(8000, () =>{
@@ -46,12 +44,16 @@ let app = express()
 let path = require('path')
 
 
+let staticPath = path.join(__dirname, '../public')
+app.use(express.static(staticPath))
+
 app.set('view engine', 'hbs')
 
 // using view engine handlebars.js or hbs
 app.get('/', (req, res) =>{
     res.render('index')
 })
+
 
 app.get('/', (req, res) =>{
     res.send('hello')
