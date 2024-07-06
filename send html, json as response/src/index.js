@@ -31,8 +31,7 @@ app.use(express.static(staticPath))
 app.listen(8000, () =>{
     console.log('running');
     // console.log(staticPath);
-    // console.log(__dirname);
-
+ 
 
 })
 
