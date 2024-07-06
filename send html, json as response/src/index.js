@@ -47,9 +47,11 @@ let path = require('path')
 let staticPath = path.join(__dirname, '../public')
 app.use(express.static(staticPath))
 
-app.set('view engine', 'hbs')
-
 // using view engine handlebars.js or hbs
+app.set('view engine', 'hbs')
+// when we change name of "views" directory we need to write one extera line of code. 
+//app.set("views", path.join(__dirname, '../tem'))
+
 app.get('/', (req, res) =>{
     res.render('index')
 })
