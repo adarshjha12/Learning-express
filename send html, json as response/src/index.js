@@ -38,7 +38,7 @@
 
 
 
-// template engines in node js 🖥️🛜
+// template or view engines in node js 🖥️🛜
 
 let fs = require('fs')
 let express = require('express')
@@ -48,6 +48,7 @@ let path = require('path')
 
 app.set('view engine', 'hbs')
 
+// using view engine handlebars.js or hbs
 app.get('/', (req, res) =>{
     res.render('index')
 })
