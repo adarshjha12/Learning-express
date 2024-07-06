@@ -53,7 +53,9 @@ app.set('view engine', 'hbs')
 //app.set("views", path.join(__dirname, '../tem'))
 
 app.get('/', (req, res) =>{
-    res.render('index')
+    res.render('index', {
+        hello: 'adarsh'
+    })
 })
 
 
