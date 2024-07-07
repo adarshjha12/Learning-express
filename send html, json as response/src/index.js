@@ -42,7 +42,7 @@ let fs = require('fs')
 let express = require('express')
 let app = express()
 let path = require('path')
-
+let hbs = require('hbs')
 
 let staticPath = path.join(__dirname, '../public')
 app.use(express.static(staticPath))
@@ -50,7 +50,10 @@ app.use(express.static(staticPath))
 // using view engine handlebars.js or hbs
 app.set('view engine', 'hbs')
 // when we change name of "views" directory we need to write one extera line of code. 
-//app.set("views", path.join(__dirname, '../tem'))
+app.set("views", path.join(__dirname, '../templates/views'))
+
+hbs.registerPartials(path.join(__dirname, '../templates/partials'))
+// setting to register partial file
 
 app.get('/', (req, res) =>{
     res.render('index', {
