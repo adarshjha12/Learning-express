@@ -61,9 +61,12 @@ app.get('/', (req, res) =>{
     })
 })
 
+app.get('/about', (req, res) =>{
+    res.render('about')
+})
 
-app.get('/', (req, res) =>{
-    res.send('hello')
+app.get('*', (req, res) =>{
+    res.render('error')
 })
 
 app.listen(8000, () =>{
