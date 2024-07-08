@@ -21,7 +21,7 @@ app.get(`/about`, async (req, res) =>{
    try {
     let response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${req.query.name}&appid=15facce67a51ac42cf416ee97a10bfc2`)
 
-     data = response.data
+     data = await response.data
      console.log(`city name is ${data.name} and tem is ${(data.main.temp - 273).toFixed(2)} &deg;C`);
 
    } catch (error) {
