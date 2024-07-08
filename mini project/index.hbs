@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #000;
+            color: aliceblue;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>weather</h1>
+</body>
+<script>
+    
+    let getWeather = async () =>{
+        let link = `https://api.openweathermap.org/data/2.5/weather?q=Patna&appid=15facce67a51ac42cf416ee97a10bfc2`
+
+        try {
+            let response = await fetch(link)
+            let data = await response.json()
+            console.log(data);
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    getWeather()
+    
+</script>
+</html>
