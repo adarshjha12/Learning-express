@@ -15,11 +15,15 @@
             <input type="text" id="cityInput" placeholder="Enter city name">
             <button type="submit">Get Weather</button>
         </form>
-        <div id="weatherResult" class="weather-result">
+        <div id="results">
+            <div id="weatherResult" class="weather-result">
             <!-- Weather information will be displayed here -->
+            </div>
+
+            <div id="weatherImage"></div>
         </div>
     </div>
-
+{{!-- <img src="/images/download (1).png" alt="bjjhbjbjbj"> --}}
     <footer>
         <h4>thank you! please visit again</h2>
         <p>&copy; adarsh jha | served by :- <a href="https://openweathermap.org/">open weather</a></p>
@@ -29,18 +33,29 @@
         let input = document.getElementById('cityInput')
         let form = document.getElementById('weatherForm')
         let weatherResult = document.getElementById('weatherResult')
+        let weatherImage = document.getElementById('weatherImage')
 
         form.addEventListener('submit', async (e) =>{
             e.preventDefault()
             let city = input.value
+
+            if(city === ''){
+                alert('type city name')
+            }
             let url = `https://api.openweathermap.org/data/2.5/weather?q=Patna&appid=15facce67a51ac42cf416ee97a10bfc2`
 
             // console.log(city);
             try {
-                let response = await fetch(url)
+                let response = await fetch(`/weather?city=${city}`)
                 let data = await response.json()
-                console.log(data);
+                console.log(data.clouds.all);
                 weatherResult.innerHTML = `temp: ${(data.main.temp - 273).toFixed(2)}&deg;C`
+
+                if(data.clouds.all >= 80){
+                    weatherImage.innerHTML = `<img src='/images/download (1).png' alt="" id="cloud">`
+                } else if(data.clouds.all < 80){
+                    weatherImage.innerHTML = `<img src='/images/download (2).png' alt="" id="sun">`
+                } 
             } catch (error) {
                 console.log(error);
             }

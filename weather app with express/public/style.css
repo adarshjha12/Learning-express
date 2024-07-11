@@ -13,7 +13,7 @@ body {
     height: 100vh;
     margin: 0;
     background-color: rgba(0, 0, 0, 0.5);
-    background-image: url('maxresdefault.jpg');
+    background-image: url('../images/maxresdefault.jpg');
     background-size: cover;
     color: white;
     background-blend-mode: darken ;
@@ -58,15 +58,28 @@ button:hover {
     background-color: #f73d04;
 }
 
-.weather-result {
-    height: 5rem;
+#results {
     width: 80%;
+    height: 5rem;
     margin-top: 20px;
-    padding: 20px;
+    /* padding: 20px; */
     background-color: #0f0f0f;
     border: 1px solid #ccc;
     border-radius: 4px;
     text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ .weather-result, #weatherImage {
+    /* padding: 0 20px; */
+    height: 5rem;
+    width: 50%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* h1{
@@ -114,3 +127,12 @@ a:hover {
         padding: 1rem ;
     }
 }
+
+#sun{
+    width: 45%;
+}
+
+#cloud{
+    width: 45%;
+}
+
