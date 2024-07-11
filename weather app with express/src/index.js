@@ -47,6 +47,10 @@ app.get('/weather', async (req, res) =>{
    }
 })
 
+app.get('*', (req, res) =>{
+  res.render('error')
+})
+
 app.listen(port, () =>{
     console.log(`listening to ${port}`);
 })
