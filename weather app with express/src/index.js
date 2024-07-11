@@ -15,6 +15,12 @@ app.get('/', (req, res) =>{
     res.render('index')
 })
 
+// functioning for fetching weather data
+let apiId; 
+let apiKey;
+
+
+
 
 app.listen(port, () =>{
     console.log(`listening to ${port}`);
